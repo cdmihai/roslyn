@@ -1,7 +1,7 @@
 ﻿<!-- Copyright (c)  Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information. -->
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFrameworks>$(RoslynPortableTargetFrameworks)</TargetFrameworks>
 
     <IsPackable>true</IsPackable>
     <NuspecPackageId>Microsoft.NETCore.Compilers</NuspecPackageId>
@@ -25,8 +25,8 @@
     <ProjectReference Update="@(ProjectReference)"
                       Targets="Publish"
                       ReferenceOutputAssembly="false"
-                      SkipGetTargetFrameworkProperties="true"
-                      SetTargetFramework="TargetFramework=$(TargetFramework)" />
+                      
+                      />
   </ItemGroup>
 
   <Target Name="_GetFilesToPackage" DependsOnTargets="InitializeCoreClrCompilerArtifacts">

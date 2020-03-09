@@ -3,6 +3,10 @@
   <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
   <Import Project="eng\targets\Settings.props" />
 
+  <PropertyGroup>
+    <DisableTransitiveProjectReferences>false</DisableTransitiveProjectReferences>
+  </PropertyGroup>
+
   <ItemGroup>
     <!-- arcade sdk msbuilds into this project, exempt it from isolation constraints-->
     <GraphIsolationExemptReference Include="$(NugetPackageRoot)microsoft.dotnet.arcade.sdk\*\tools\VisualStudio.SetupPackage.swixproj" />

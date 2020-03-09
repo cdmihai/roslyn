@@ -48,4 +48,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers" Version="$(MicrosoftVisualStudioSDKAnalyzersVersion)" PrivateAssets="all" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReferenceTargets Condition="'$(VsSDKInstall)' != ''" 
+      Include="Build" Targets="VSIXContainerProjectOutputGroup" />
+  </ItemGroup>
 </Project>

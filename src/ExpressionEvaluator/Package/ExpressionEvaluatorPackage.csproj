@@ -88,4 +88,12 @@
       <Link>ProvideRoslynBindingRedirection.cs</Link>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <!-- VsSDK calls only these projects with VsdConfigOutputGroup. This filtering behaviour cannot be specified in static graph isolation, so exempting the references entirely. -->
+    <GraphIsolationExemptReference Include="..\Core\Source\FunctionResolver\Microsoft.CodeAnalysis.FunctionResolver.csproj" />
+    <GraphIsolationExemptReference Include="..\CSharp\Source\ExpressionCompiler\Microsoft.CodeAnalysis.CSharp.ExpressionCompiler.csproj" />
+    <GraphIsolationExemptReference Include="..\CSharp\Source\ResultProvider\Portable\Microsoft.CodeAnalysis.CSharp.ResultProvider.csproj" />
+    <GraphIsolationExemptReference Include="..\VisualBasic\Source\ExpressionCompiler\Microsoft.CodeAnalysis.VisualBasic.ExpressionCompiler.vbproj" />
+    <GraphIsolationExemptReference Include="..\VisualBasic\Source\ResultProvider\Portable\Microsoft.CodeAnalysis.VisualBasic.ResultProvider.vbproj" />
+  </ItemGroup>
 </Project>

@@ -287,5 +287,13 @@
     <PackageReference Include="Microsoft.VisualStudio.Threading" Version="$(MicrosoftVisualStudioThreadingVersion)" />
     <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
   </ItemGroup>
+  <ItemGroup>
+    <!-- VsSDK calls only these projects with PkgDefProjectOutputGroup or VsixSourceItemsOutputGroup. This filtering behaviour cannot be specified in static graph isolation, so exempting the references entirely. -->
+    <GraphIsolationExemptReference Include="..\..\VisualStudio\LiveShare\Impl\Microsoft.VisualStudio.LanguageServices.LiveShare.csproj" />
+    <GraphIsolationExemptReference Include="..\Core\Def\Microsoft.VisualStudio.LanguageServices.csproj" />
+    <GraphIsolationExemptReference Include="..\CSharp\Impl\Microsoft.VisualStudio.LanguageServices.CSharp.csproj" />
+    <GraphIsolationExemptReference Include="..\VisualBasic\Impl\Microsoft.VisualStudio.LanguageServices.VisualBasic.vbproj" />
+    <GraphIsolationExemptReference Include="..\VisualStudioInteractiveComponents\Roslyn.VisualStudio.InteractiveComponents.csproj" />
+  </ItemGroup>
   <Import Project="$(RepositoryEngineeringDir)targets\GenerateServiceHubConfigurationFiles.targets" />
 </Project>

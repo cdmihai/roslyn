@@ -7,6 +7,7 @@ config({
             fileNameEntryPoints: [r`Roslyn.sln`],
             useManagedSharedCompilation: true,
             enableTransitiveProjectReferences: true,
+            enableBinLogTracing: true,
         },  
     ],
     disableDefaultSourceResolver: true,

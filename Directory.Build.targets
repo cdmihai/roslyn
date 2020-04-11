@@ -3,9 +3,8 @@
   <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" />
   <Import Project="eng\targets\Imports.targets" />
 
-  <ItemGroup>
-    <!-- VsSDK msbuilds into the project references with extra targets. Specify them for static graph target inference. -->
-    <ProjectReferenceTargets Condition="'$(VsSDKInstall)' != ''" 
-      Include="Build" Targets="BuiltProjectOutputGroupDependencies;BuiltProjectOutputGroup;DebugSymbolsProjectOutputGroup;SatelliteDllsProjectOutputGroup" />
-  </ItemGroup>
+  <!-- VsSDK msbuilds into the project references with extra targets. Specify them for static graph target inference. -->
+  <PropertyGroup Condition="'$(VsSDKInstall)' != ''" >
+    <ProjectReferenceTargetsForBuild>BuiltProjectOutputGroupDependencies;BuiltProjectOutputGroup;DebugSymbolsProjectOutputGroup;SatelliteDllsProjectOutputGroup</ProjectReferenceTargetsForBuild>
+  </PropertyGroup>
 </Project>
